@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salbro General Contracting | Premier Engineering & Oilfield Solutions</title>
+  <link rel="icon" type="image/png" href="images/Salbro-Logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,15 +43,16 @@
       <div class="flex justify-between items-center h-24 transition-all duration-500" id="nav-inner">
         <!-- Logo -->
         <a href="#home" class="flex items-center space-x-3 group">
-          <div class="w-14 h-14 bg-[#0A192F] rounded-2xl flex items-center justify-center relative overflow-hidden transition-transform duration-500 group-hover:rotate-[-6deg]">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#1E3A8A] to-[#0A192F]"></div>
-            <i class="fas fa-hard-hat text-[#D4AF37] text-2xl relative z-10"></i>
-          </div>
-          <div class="leading-none">
-            <span class="text-3xl font-extrabold tracking-tight text-[#0A192F] font-display" data-en="SALBRO" data-ar="سالبرو">SALBRO</span>
-            <span class="block text-[9px] font-bold text-[#C9A961] tracking-[0.25em] mt-1" data-en="GENERAL CONTRACTING L.L.C" data-ar="المقاولات العامة ذ.م.م">GENERAL CONTRACTING L.L.C</span>
-          </div>
-        </a>
+  <div class="w-14 h-14 bg-black rounded-2xl overflow-hidden shadow-lg shadow-[#0A192F]/20 transition-transform duration-500 group-hover:rotate-[-6deg] group-hover:scale-105">
+    <img src="images/Salbro-Logo.png" 
+         alt="Salbro Logo" 
+         class="w-full h-full object-contain p-1">
+  </div>
+  <div class="leading-none">
+    <span class="text-3xl font-extrabold tracking-tight text-[#0A192F] font-display" data-en="SALBRO" data-ar="سالبرو">SALBRO</span>
+    <span class="block text-[9px] font-bold text-[#C9A961] tracking-[0.25em] mt-1" data-en="GENERAL CONTRACTING L.L.C" data-ar="المقاولات العامة ذ.م.م">GENERAL CONTRACTING L.L.C</span>
+  </div>
+</a>
 
         <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-10 text-[13px] font-semibold text-[#0A192F]/70 tracking-wide uppercase">
@@ -100,7 +102,7 @@
   <!-- ========== HERO SECTION ========== -->
   <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Industrial background" class="w-full h-full object-cover kenburns">
+      <img src="images/Hero-image.jpg" alt="Industrial background" class="w-full h-full object-cover kenburns">
       <div class="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/85 to-[#1E3A8A]/70"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,25,47,0.4)_100%)]"></div>
     </div>
@@ -343,7 +345,7 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
       <div class="grid lg:grid-cols-2 gap-20 items-center">
         <div class="reveal-left order-2 lg:order-1 relative">
-          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Seismic operations" class="rounded-3xl shadow-2xl w-full object-cover h-[500px] relative z-10">
+          <img src="images/Pic-2.jpg" alt="Seismic operations" class="rounded-3xl shadow-2xl w-full object-cover h-[500px] relative z-10">
           <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C9A961]/30 rounded-3xl z-0"></div>
           <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#C9A961]/10 rounded-full blur-2xl"></div>
         </div>
@@ -584,7 +586,7 @@
       <div class="grid lg:grid-cols-2 gap-20 items-center">
         <div class="reveal-left relative">
           <div class="relative">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="CEO Sajid Mehmood" class="rounded-3xl shadow-2xl w-full object-cover h-[600px] relative z-10">
+            <img src="images/CEO-Image.png" alt="CEO Sajid Mehmood" class="rounded-3xl shadow-2xl w-full object-cover h-[600px] relative z-10">
             <div class="absolute -bottom-8 -right-8 w-64 h-64 border-2 border-[#C9A961]/20 rounded-3xl z-0"></div>
             <div class="absolute -top-6 -left-6 w-32 h-32 bg-[#C9A961]/10 rounded-full blur-2xl"></div>
           </div>
@@ -628,6 +630,61 @@
       </div>
     </div>
   </section>
+
+  <!-- ========== LEADERSHIP TEAM (MD & PRO) ========== -->
+<section class="relative py-24 bg-[#0A192F] overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px); background-size: 50px 50px;"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1E3A8A]/20 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <div class="w-12 h-px bg-[#C9A961]"></div>
+        <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Our Team" data-ar="فريقنا">Our Team</span>
+        <div class="w-12 h-px bg-[#C9A961]"></div>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white font-display" data-en="Leadership Team" data-ar="فريق القيادة">Leadership Team</h2>
+    </div>
+
+    <!-- Two Cards -->
+    <div class="stagger grid md:grid-cols-2 gap-20 mt-16 max-w-4xl mx-auto">
+
+      <!-- Managing Director -->
+      <div class="group bg-white/5 backdrop-blur-sm border-t-2 border-t-[#C9A961] border-x border-b border-x-white/10 border-b-white/10 rounded-3xl overflow-hidden hover:border-t-[#E5C76B] hover:bg-white/10 transition-all duration-500 shadow-xl shadow-black/20">
+        <div class="p-6">
+          <div class="relative h-[300px] overflow-hidden rounded-2xl bg-[#112240]">
+            <img src="images/MD.jpeg" alt="Managing Director"
+              class="w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F]/60 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+        <div class="px-8 pb-8 pt-2 text-center">
+          <h3 class="text-2xl font-bold text-white font-display" data-en="Ahmed Khan" data-ar="أحمد خان">Ahmed Khan</h3>
+          <div class="w-10 h-0.5 bg-[#C9A961] mx-auto my-4"></div>
+          <p class="text-xs font-bold text-[#C9A961] tracking-[0.2em] uppercase" data-en="Managing Director" data-ar="المدير العام">Managing Director</p>
+        </div>
+      </div>
+
+      <!-- PRO (Public Relations Officer) -->
+      <div class="group bg-white/5 backdrop-blur-sm border-t-2 border-t-[#C9A961] border-x border-b border-x-white/10 border-b-white/10 rounded-3xl overflow-hidden hover:border-t-[#E5C76B] hover:bg-white/10 transition-all duration-500 shadow-xl shadow-black/20">
+        <div class="p-6">
+          <div class="relative h-[300px] overflow-hidden rounded-2xl bg-[#112240]">
+            <img src="images/PRO.jpeg" alt="Public Relations Officer"
+              class="w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F]/60 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+        <div class="px-8 pb-8 pt-2 text-center">
+          <h3 class="text-2xl font-bold text-white font-display" data-en="Ahmed Khan" data-ar="أحمد خان">Ahmed Khan</h3>
+          <div class="w-10 h-0.5 bg-[#C9A961] mx-auto my-4"></div>
+          <p class="text-xs font-bold text-[#C9A961] tracking-[0.2em] uppercase" data-en="Public Relations Officer" data-ar="مسؤول العلاقات العامة">Public Relations Officer</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- ========== CONTACT / FORM ========== -->
   <section id="contact" class="relative py-32 bg-white overflow-hidden">
