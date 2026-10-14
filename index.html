@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salbro General Contracting | Premier Engineering & Oilfield Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-[#0A192F] antialiased">
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <svg viewBox="0 0 100 100" class="preloader-svg">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#C9A961" stroke-width="2" class="preloader-circle" />
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#1E3A8A" stroke-width="2" class="preloader-circle-2" />
+          <text x="50" y="55" text-anchor="middle" fill="#0A192F" font-size="18" font-weight="800" font-family="Playfair Display">S</text>
+        </svg>
+      </div>
+      <div class="preloader-text">SALBRO</div>
+      <div class="preloader-bar">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor Dot -->
+  <div class="cursor-dot hidden md:block" id="cursor-dot"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar" class="fixed w-full z-50 glass-nav transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="flex justify-between items-center h-24 transition-all duration-500" id="nav-inner">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-3 group">
+          <div class="w-14 h-14 bg-[#0A192F] rounded-2xl flex items-center justify-center relative overflow-hidden transition-transform duration-500 group-hover:rotate-[-6deg]">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#1E3A8A] to-[#0A192F]"></div>
+            <i class="fas fa-hard-hat text-[#D4AF37] text-2xl relative z-10"></i>
+          </div>
+          <div class="leading-none">
+            <span class="text-3xl font-extrabold tracking-tight text-[#0A192F] font-display" data-en="SALBRO" data-ar="سالبرو">SALBRO</span>
+            <span class="block text-[9px] font-bold text-[#C9A961] tracking-[0.25em] mt-1" data-en="GENERAL CONTRACTING L.L.C" data-ar="المقاولات العامة ذ.م.م">GENERAL CONTRACTING L.L.C</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-10 text-[13px] font-semibold text-[#0A192F]/70 tracking-wide uppercase">
+          <a href="#home" class="nav-link hover:text-[#0A192F] transition-colors duration-300" data-en="Home" data-ar="الرئيسية">Home</a>
+          <a href="#about" class="nav-link hover:text-[#0A192F] transition-colors duration-300" data-en="About" data-ar="من نحن">About</a>
+          <a href="#services" class="nav-link hover:text-[#0A192F] transition-colors duration-300" data-en="Services" data-ar="خدماتنا">Services</a>
+          <a href="#projects" class="nav-link hover:text-[#0A192F] transition-colors duration-300" data-en="Projects" data-ar="مشاريعنا">Projects</a>
+          <a href="#certifications" class="nav-link hover:text-[#0A192F] transition-colors duration-300" data-en="Certifications" data-ar="الشهادات">Certifications</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Language Toggle -->
+          <button id="lang-toggle" class="lang-toggle" aria-label="Toggle Language">
+            <span class="lang-en">عربي</span>
+            <span class="lang-ar">EN</span>
+            <i class="fas fa-globe"></i>
+          </button>
+
+          <!-- CTA -->
+          <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-[#0A192F] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#1E3A8A] transition-all duration-500 shadow-lg shadow-[#0A192F]/20 hover:shadow-xl hover:shadow-[#1E3A8A]/30 hover:-translate-y-0.5" data-en="Contact Us" data-ar="اتصل بنا">
+            Contact Us
+            <i class="fas fa-arrow-right text-[10px] transition-transform duration-300 group-hover:translate-x-1"></i>
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button id="mobile-menu-btn" class="lg:hidden w-12 h-12 flex items-center justify-center rounded-full bg-[#0A192F]/5 text-[#0A192F] text-lg hover:bg-[#0A192F]/10 transition">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 px-6">
+      <div class="py-6 space-y-1">
+        <a href="#home" class="block py-3 text-lg font-semibold text-[#0A192F] border-b border-gray-50" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#about" class="block py-3 text-lg font-semibold text-[#0A192F] border-b border-gray-50" data-en="About" data-ar="من نحن">About</a>
+        <a href="#services" class="block py-3 text-lg font-semibold text-[#0A192F] border-b border-gray-50" data-en="Services" data-ar="خدماتنا">Services</a>
+        <a href="#projects" class="block py-3 text-lg font-semibold text-[#0A192F] border-b border-gray-50" data-en="Projects" data-ar="مشاريعنا">Projects</a>
+        <a href="#certifications" class="block py-3 text-lg font-semibold text-[#0A192F] border-b border-gray-50" data-en="Certifications" data-ar="الشهادات">Certifications</a>
+        <a href="#contact" class="mt-4 block bg-[#0A192F] text-white text-center px-5 py-4 rounded-full font-bold text-sm uppercase tracking-widest" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Industrial background" class="w-full h-full object-cover kenburns">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0A192F]/95 via-[#0A192F]/85 to-[#1E3A8A]/70"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,25,47,0.4)_100%)]"></div>
+    </div>
+
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+      <div class="absolute top-1/4 -left-20 w-96 h-px bg-gradient-to-r from-transparent via-[#C9A961]/40 to-transparent"></div>
+      <div class="absolute bottom-1/4 -right-20 w-96 h-px bg-gradient-to-l from-transparent via-[#C9A961]/40 to-transparent"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-40 w-full">
+      <div class="max-w-4xl">
+        <div class="reveal flex flex-wrap gap-3 mb-8">
+          <span class="bg-white/10 backdrop-blur-md text-[#D4AF37] text-[10px] font-bold px-4 py-2 rounded-full border border-[#D4AF37]/30 tracking-widest">ISO 9001:2015</span>
+          <span class="bg-white/10 backdrop-blur-md text-[#D4AF37] text-[10px] font-bold px-4 py-2 rounded-full border border-[#D4AF37]/30 tracking-widest">ISO 14001:2015</span>
+          <span class="bg-white/10 backdrop-blur-md text-[#D4AF37] text-[10px] font-bold px-4 py-2 rounded-full border border-[#D4AF37]/30 tracking-widest">ISO 45001:2018</span>
+          <span class="bg-[#C9A961]/20 backdrop-blur-md text-[#E5C76B] text-[10px] font-bold px-4 py-2 rounded-full border border-[#C9A961]/40 tracking-widest" data-en="ICV CERTIFIED" data-ar="معتمد ICV">ICV CERTIFIED</span>
+        </div>
+
+        <h1 class="reveal text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] font-display">
+          <span data-en="Premier" data-ar="الرائد">Premier</span>
+          <span class="block shimmer-gold" data-en="Engineering &" data-ar="في الهندسة و">Engineering &</span>
+          <span class="block" data-en="Contracting Solutions" data-ar="حلول المقاولات">Contracting Solutions</span>
+        </h1>
+
+        <p class="reveal text-lg md:text-xl text-gray-300/90 max-w-2xl leading-relaxed mt-8 font-light" data-en="Your trusted partner delivering high-standard civil & gas field support, seismic operations, MEP works, and renewable solar energy projects across the UAE." data-ar="شريكك الموثوق لتقديم خدمات الدعم المدني والميداني عالية المستوى، والعمليات الزلزالية، وأعمال الميكانيكا والكهرباء والسباكة، ومشاريع الطاقة الشمسية المتجددة في جميع أنحاء الإمارات.">
+          Your trusted partner delivering high-standard civil & gas field support, seismic operations, MEP works, and renewable solar energy projects across the UAE.
+        </p>
+
+        <div class="reveal flex flex-wrap gap-5 mt-12">
+          <a href="#services" class="group inline-flex items-center gap-3 bg-[#C9A961] text-[#0A192F] px-9 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#E5C76B] transition-all duration-500 shadow-2xl shadow-[#C9A961]/30 hover:shadow-[#C9A961]/50 hover:-translate-y-1">
+            <span data-en="Explore Services" data-ar="استكشف خدماتنا">Explore Services</span>
+            <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180"></i>
+          </a>
+          <a href="#contact" class="group inline-flex items-center gap-3 border-2 border-white/25 text-white px-9 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white/50 transition-all duration-500 backdrop-blur-sm">
+            <span data-en="Get a Quote" data-ar="احصل على عرض سعر">Get a Quote</span>
+            <i class="fas fa-phone text-xs transition-transform duration-300 group-hover:rotate-12"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3">
+      <span class="text-[10px] font-bold text-white/40 tracking-[0.3em] uppercase" data-en="Scroll" data-ar="انزل">Scroll</span>
+      <div class="w-px h-12 bg-gradient-to-b from-white/40 to-transparent relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-[#C9A961] animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAR / STATS ========== -->
+  <section class="relative bg-[#0A192F] py-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+        <div class="reveal group">
+          <div class="text-4xl md:text-5xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition-colors duration-500">
+            <span class="counter" data-target="500">0</span>+
+          </div>
+          <div class="text-[11px] text-gray-400 font-semibold tracking-widest uppercase mt-3" data-en="Skilled Manpower Deployed" data-ar="قوى عاملة ماهرة">Skilled Manpower Deployed</div>
+          <div class="w-12 h-0.5 bg-[#C9A961]/40 mx-auto mt-4 transition-all duration-500 group-hover:w-20 group-hover:bg-[#C9A961]"></div>
+        </div>
+        <div class="reveal group">
+          <div class="text-4xl md:text-5xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition-colors duration-500">
+            <span class="counter" data-target="10">0</span>+
+          </div>
+          <div class="text-[11px] text-gray-400 font-semibold tracking-widest uppercase mt-3" data-en="Major Projects Completed" data-ar="مشاريع كبرى مكتملة">Major Projects Completed</div>
+          <div class="w-12 h-0.5 bg-[#C9A961]/40 mx-auto mt-4 transition-all duration-500 group-hover:w-20 group-hover:bg-[#C9A961]"></div>
+        </div>
+        <div class="reveal group">
+          <div class="text-4xl md:text-5xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition-colors duration-500">
+            <span class="counter" data-target="8">0</span>+
+          </div>
+          <div class="text-[11px] text-gray-400 font-semibold tracking-widest uppercase mt-3" data-en="Years of Experience" data-ar="سنوات من الخبرة">Years of Experience</div>
+          <div class="w-12 h-0.5 bg-[#C9A961]/40 mx-auto mt-4 transition-all duration-500 group-hover:w-20 group-hover:bg-[#C9A961]"></div>
+        </div>
+        <div class="reveal group">
+          <div class="text-4xl md:text-5xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition-colors duration-500">
+            <span class="counter" data-target="100">0</span>%
+          </div>
+          <div class="text-[11px] text-gray-400 font-semibold tracking-widest uppercase mt-3" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</div>
+          <div class="w-12 h-0.5 bg-[#C9A961]/40 mx-auto mt-4 transition-all duration-500 group-hover:w-20 group-hover:bg-[#C9A961]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="relative py-32 bg-white overflow-hidden">
+    <div class="section-num">01</div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal-left">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-px bg-[#C9A961]"></div>
+            <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Who We Are" data-ar="من نحن">Who We Are</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A192F] leading-tight font-display">
+            <span data-en="About Salbro" data-ar="عن سالبرو">About Salbro</span><br>
+            <span class="text-gradient" data-en="General Contracting" data-ar="للمقاولات العامة">General Contracting</span>
+          </h2>
+          <p class="mt-8 text-gray-600 leading-relaxed text-lg font-light" data-en="Salbro General Contracting L.L.C. is a premier multidisciplinary contracting firm and workforce technical partner serving major energy, construction, and power mega-projects across the UAE. Established on February 8, 2022, in Abu Dhabi, we have rapidly emerged as a trusted provider of comprehensive civil construction services, oilfield technical solutions, and skilled manpower supply." data-ar="سالبرو للمقاولات العامة ذ.م.م هي شركة مقاولات رائدة متعددة التخصصات وشريك تقني للقوى العاملة تخدم مشاريع الطاقة والبناء والطاقة الكبرى في جميع أنحاء الإمارات. تأسست في 8 فبراير 2022 في أبوظبي، وقد برزت بسرعة كمزود موثوق لخدمات البناء المدني الشاملة والحلول التقنية لحقول النفط وتوريد القوى العاملة الماهرة.">
+            Salbro General Contracting L.L.C. is a premier multidisciplinary contracting firm and workforce technical partner serving major energy, construction, and power mega-projects across the UAE. Established on February 8, 2022, in Abu Dhabi, we have rapidly emerged as a trusted provider of comprehensive civil construction services, oilfield technical solutions, and skilled manpower supply.
+          </p>
+          <p class="mt-5 text-gray-500 leading-relaxed" data-en="Under the dynamic leadership of our Founder & CEO, Sajid Mehmood, we combine operational flexibility with a strong quality management system to deliver outstanding service, reliability, and complete customer satisfaction." data-ar="تحت القيادة الديناميكية لمؤسسنا والرئيس التنفيذي، ساجد محمود، نجمع بين المرونة التشغيلية ونظام إدارة الجودة القوي لتقديم خدمة متميزة وموثوقية ورضا كامل للعملاء.">
+            Under the dynamic leadership of our Founder & CEO, Sajid Mehmood, we combine operational flexibility with a strong quality management system to deliver outstanding service, reliability, and complete customer satisfaction.
+          </p>
+
+          <div class="mt-12 grid grid-cols-2 gap-6">
+            <div class="reveal-scale bg-gradient-to-br from-[#0A192F] to-[#1E3A8A] p-7 rounded-3xl text-white relative overflow-hidden group">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-[#C9A961]/10 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-700"></div>
+              <i class="fas fa-bullseye text-2xl text-[#D4AF37] mb-4 relative"></i>
+              <h3 class="font-display text-xl font-bold relative" data-en="Our Vision" data-ar="رؤيتنا">Our Vision</h3>
+              <p class="text-sm text-gray-300 mt-3 leading-relaxed relative font-light" data-en="To provide outstanding service through a strong quality management system and a team of competent professionals." data-ar="تقديم خدمة متميزة من خلال نظام إدارة جودة قوي وفريق من المهنيين الأكفاء.">To provide outstanding service through a strong quality management system and a team of competent professionals.</p>
+            </div>
+            <div class="reveal-scale bg-gradient-to-br from-[#1E3A8A] to-[#0A192F] p-7 rounded-3xl text-white relative overflow-hidden group">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-[#C9A961]/10 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-700"></div>
+              <i class="fas fa-rocket text-2xl text-[#D4AF37] mb-4 relative"></i>
+              <h3 class="font-display text-xl font-bold relative" data-en="Our Mission" data-ar="مهمتنا">Our Mission</h3>
+              <p class="text-sm text-gray-300 mt-3 leading-relaxed relative font-light" data-en="To deliver quality services on time, with professionalism, reliability, and complete customer satisfaction." data-ar="تقديم خدمات عالية الجودة في الوقت المحدد، مع الاحترافية والموثوقية ورضا العملاء الكامل.">To deliver quality services on time, with professionalism, reliability, and complete customer satisfaction.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right relative">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Construction team" class="rounded-3xl shadow-2xl w-full object-cover h-[600px]">
+            <div class="absolute -bottom-8 -left-8 bg-white p-7 rounded-3xl shadow-2xl border border-gray-100 float">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-[#C9A961]/15 rounded-2xl flex items-center justify-center">
+                  <i class="fas fa-award text-2xl text-[#C9A961]"></i>
+                </div>
+                <div>
+                  <div class="text-3xl font-extrabold text-[#0A192F] font-display">37.01%</div>
+                  <div class="text-[10px] font-bold text-gray-400 tracking-widest uppercase" data-en="ICV Score" data-ar="درجة ICV">ICV Score</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -top-6 -right-6 w-32 h-32 opacity-20" style="background-image: radial-gradient(circle, #0A192F 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section id="services" class="relative py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <div class="section-num">02</div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <div class="flex items-center justify-center gap-4 mb-6">
+          <div class="w-12 h-px bg-[#C9A961]"></div>
+          <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="What We Do" data-ar="ماذا نفعل">What We Do</span>
+          <div class="w-12 h-px bg-[#C9A961]"></div>
+        </div>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A192F] font-display" data-en="Core Business Divisions" data-ar="أقسام الأعمال الأساسية">Core Business Divisions</h2>
+        <p class="mt-6 text-gray-500 text-lg font-light" data-en="Comprehensive contracting capabilities and technical support services across the UAE." data-ar="قدرات مقاولات شاملة وخدمات دعم فني في جميع أنحاء الإمارات.">Comprehensive contracting capabilities and technical support services across the UAE.</p>
+      </div>
+
+      <div class="stagger grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+        <!-- Card 1 -->
+        <div class="premium-card p-10 group">
+          <div class="icon-circle bg-[#0A192F] group-hover:bg-[#1E3A8A]">
+            <i class="fas fa-oil-well text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] mt-8 font-display" data-en="Onshore & Offshore Oil/Gas" data-ar="خدمات النفط والغاز البرية والبحرية">Onshore & Offshore Oil/Gas</h3>
+          <p class="mt-4 text-gray-500 leading-relaxed text-sm font-light" data-en="Comprehensive oil and gas field support services, including seismic operations, gas operator services, and skilled technical manpower." data-ar="خدمات دعم شاملة لحقول النفط والغاز، بما في ذلك العمليات الزلزالية وخدمات مشغلي الغاز والقوى العاملة الفنية الماهرة.">Comprehensive oil and gas field support services, including seismic operations, gas operator services, and skilled technical manpower.</p>
+          <div class="mt-6 flex items-center gap-2 text-[#C9A961] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span> <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="premium-card p-10 group">
+          <div class="icon-circle bg-[#0A192F] group-hover:bg-[#1E3A8A]">
+            <i class="fas fa-hard-hat text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] mt-8 font-display" data-en="Construction Services" data-ar="خدمات البناء">Construction Services</h3>
+          <p class="mt-4 text-gray-500 leading-relaxed text-sm font-light" data-en="Full-scale civil construction, building projects contracting, and infrastructure development with a focus on quality and safety." data-ar="بناء مدني كامل النطاق، ومقاولات مشاريع البناء، وتطوير البنية التحتية مع التركيز على الجودة والسلامة.">Full-scale civil construction, building projects contracting, and infrastructure development with a focus on quality and safety.</p>
+          <div class="mt-6 flex items-center gap-2 text-[#C9A961] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span> <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="premium-card p-10 group">
+          <div class="icon-circle bg-[#0A192F] group-hover:bg-[#1E3A8A]">
+            <i class="fas fa-bolt text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] mt-8 font-display" data-en="Electrical Services" data-ar="الخدمات الكهربائية">Electrical Services</h3>
+          <p class="mt-4 text-gray-500 leading-relaxed text-sm font-light" data-en="Expert electrical contracting, MEP works, and skilled electrical technicians for industrial and commercial projects." data-ar="مقاولات كهربائية خبيرة، وأعمال ميكانيكا وكهرباء وسباكة، وفنيين كهربائيين مهرة للمشاريع الصناعية والتجارية.">Expert electrical contracting, MEP works, and skilled electrical technicians for industrial and commercial projects.</p>
+          <div class="mt-6 flex items-center gap-2 text-[#C9A961] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span> <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="premium-card p-10 group">
+          <div class="icon-circle bg-[#0A192F] group-hover:bg-[#1E3A8A]">
+            <i class="fas fa-gears text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] mt-8 font-display" data-en="Mechanical Services" data-ar="الخدمات الميكانيكية">Mechanical Services</h3>
+          <p class="mt-4 text-gray-500 leading-relaxed text-sm font-light" data-en="Mechanical contracting, pipe fabrication, welding, and maintenance services for oil, gas, and industrial facilities." data-ar="مقاولات ميكانيكية، وتصنيع الأنابيب، واللحام، وخدمات الصيانة لمنشآت النفط والغاز والمنشآت الصناعية.">Mechanical contracting, pipe fabrication, welding, and maintenance services for oil, gas, and industrial facilities.</p>
+          <div class="mt-6 flex items-center gap-2 text-[#C9A961] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span> <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="premium-card p-10 group">
+          <div class="icon-circle bg-[#0A192F] group-hover:bg-[#1E3A8A]">
+            <i class="fas fa-truck-monster text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] mt-8 font-display" data-en="Civil & Heavy Equipment" data-ar="المعدات المدنية والثقيلة">Civil & Heavy Equipment</h3>
+          <p class="mt-4 text-gray-500 leading-relaxed text-sm font-light" data-en="Heavy equipment support, crane operations, and skilled operators for large-scale civil and industrial projects." data-ar="دعم المعدات الثقيلة، وعمليات الرافعات، ومشغلين مهرة للمشاريع المدنية والصناعية واسعة النطاق.">Heavy equipment support, crane operations, and skilled operators for large-scale civil and industrial projects.</p>
+          <div class="mt-6 flex items-center gap-2 text-[#C9A961] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span> <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="premium-card p-10 group">
+          <div class="icon-circle bg-[#0A192F] group-hover:bg-[#1E3A8A]">
+            <i class="fas fa-industry text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] mt-8 font-display" data-en="Industrial Services" data-ar="الخدمات الصناعية">Industrial Services</h3>
+          <p class="mt-4 text-gray-500 leading-relaxed text-sm font-light" data-en="Comprehensive industrial support, manpower supply, and technical services for refineries, plants, and mega-projects." data-ar="دعم صناعي شامل، وتوريد القوى العاملة، وخدمات فنية للمصافي والمصانع والمشاريع العملاقة.">Comprehensive industrial support, manpower supply, and technical services for refineries, plants, and mega-projects.</p>
+          <div class="mt-6 flex items-center gap-2 text-[#C9A961] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span data-en="Learn More" data-ar="اعرف المزيد">Learn More</span> <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MANPOWER / SEISMIC SECTION ========== -->
+  <section class="relative py-32 bg-[#0A192F] overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1E3A8A]/30 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal-left order-2 lg:order-1 relative">
+          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Seismic operations" class="rounded-3xl shadow-2xl w-full object-cover h-[500px] relative z-10">
+          <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C9A961]/30 rounded-3xl z-0"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#C9A961]/10 rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="reveal-right order-1 lg:order-2">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-px bg-[#C9A961]"></div>
+            <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Specialized Expertise" data-ar="خبرة متخصصة">Specialized Expertise</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight font-display">
+            <span data-en="Seismic Works &" data-ar="الأعمال الزلزالية و">Seismic Works &</span><br>
+            <span class="shimmer-gold" data-en="Manpower Supply" data-ar="توريد القوى العاملة">Manpower Supply</span>
+          </h2>
+          <p class="mt-8 text-gray-300 leading-relaxed text-lg font-light" data-en="Salbro General Contracting is a top Seismic service provider offering a wide range of Oil & Gas services. We have a large pool of skilled and qualified manpower across various industries in the UAE, ensuring efficient and reliable workforce solutions." data-ar="سالبرو للمقاولات العامة هي مزود خدمات زلزالية رائد يقدم مجموعة واسعة من خدمات النفط والغاز. لدينا مجموعة كبيرة من القوى العاملة الماهرة والمؤهلة في مختلف الصناعات في الإمارات، مما يضمن حلول قوى عاملة فعالة وموثوقة.">
+            Salbro General Contracting is a top Seismic service provider offering a wide range of Oil & Gas services. We have a large pool of skilled and qualified manpower across various industries in the UAE, ensuring efficient and reliable workforce solutions.
+          </p>
+
+          <div class="mt-10 grid grid-cols-2 gap-5">
+            <div class="flex items-center gap-3 group">
+              <div class="w-9 h-9 rounded-full bg-[#C9A961]/15 flex items-center justify-center group-hover:bg-[#C9A961]/30 transition">
+                <i class="fas fa-check text-[#D4AF37] text-xs"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-200" data-en="Heavy & Light Drivers" data-ar="سائقون ثقيلون وخفيفون">Heavy & Light Drivers</span>
+            </div>
+            <div class="flex items-center gap-3 group">
+              <div class="w-9 h-9 rounded-full bg-[#C9A961]/15 flex items-center justify-center group-hover:bg-[#C9A961]/30 transition">
+                <i class="fas fa-check text-[#D4AF37] text-xs"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-200" data-en="Gas & Vibro Operators" data-ar="مشغلو الغاز والفايبو">Gas & Vibro Operators</span>
+            </div>
+            <div class="flex items-center gap-3 group">
+              <div class="w-9 h-9 rounded-full bg-[#C9A961]/15 flex items-center justify-center group-hover:bg-[#C9A961]/30 transition">
+                <i class="fas fa-check text-[#D4AF37] text-xs"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-200" data-en="Troubleshooters" data-ar="فنيو حل المشكلات">Troubleshooters</span>
+            </div>
+            <div class="flex items-center gap-3 group">
+              <div class="w-9 h-9 rounded-full bg-[#C9A961]/15 flex items-center justify-center group-hover:bg-[#C9A961]/30 transition">
+                <i class="fas fa-check text-[#D4AF37] text-xs"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-200" data-en="Radio Operators" data-ar="مشغلو الراديو">Radio Operators</span>
+            </div>
+            <div class="flex items-center gap-3 group">
+              <div class="w-9 h-9 rounded-full bg-[#C9A961]/15 flex items-center justify-center group-hover:bg-[#C9A961]/30 transition">
+                <i class="fas fa-check text-[#D4AF37] text-xs"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-200" data-en="Navigators" data-ar="ملاحون">Navigators</span>
+            </div>
+            <div class="flex items-center gap-3 group">
+              <div class="w-9 h-9 rounded-full bg-[#C9A961]/15 flex items-center justify-center group-hover:bg-[#C9A961]/30 transition">
+                <i class="fas fa-check text-[#D4AF37] text-xs"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-200" data-en="Skilled Labor" data-ar="عمالة ماهرة">Skilled Labor</span>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <div class="text-[10px] font-bold text-[#C9A961] tracking-[0.3em] uppercase mb-4" data-en="Additional Trades" data-ar="مهن إضافية">Additional Trades</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Plumbers" data-ar="سباكون">Plumbers</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Pipe Fabricators" data-ar="مصنعو الأنابيب">Pipe Fabricators</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Welders" data-ar="لحامون">Welders</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Scaffolders" data-ar="عمال سقالات">Scaffolders</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Carpenters" data-ar="نجارون">Carpenters</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Masons" data-ar="بناؤون">Masons</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Steel Fixers" data-ar="مثبتو حديد التسليح">Steel Fixers</span>
+              <span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-2 rounded-full text-xs font-medium hover:bg-white/10 hover:border-[#C9A961]/40 transition" data-en="Riggers" data-ar="مركبو الرافعات">Riggers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS / CLIENTS ========== -->
+  <section id="projects" class="relative py-32 bg-white overflow-hidden">
+    <div class="section-num">03</div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <div class="flex items-center justify-center gap-4 mb-6">
+          <div class="w-12 h-px bg-[#C9A961]"></div>
+          <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Trusted By" data-ar="موثوق من قبل">Trusted By</span>
+          <div class="w-12 h-px bg-[#C9A961]"></div>
+        </div>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A192F] font-display" data-en="Our Valued Major Clients" data-ar="عملاؤنا الكرام">Our Valued Major Clients</h2>
+        <p class="mt-6 text-gray-500 text-lg font-light" data-en="Trusted by leading energy, construction, and industrial organizations across the UAE." data-ar="موثوق به من قبل مؤسسات الطاقة والبناء والصناعة الرائدة في جميع أنحاء الإمارات.">Trusted by leading energy, construction, and industrial organizations across the UAE.</p>
+      </div>
+
+      <div class="mt-20 overflow-hidden relative reveal">
+        <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+        <div class="marquee-track">
+          <div class="flex items-center gap-20 px-10">
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ADNOC</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">CNPC</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">POWERCHINA</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ARGAS</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">BGP</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">SUNMAX SOLAR</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ALEC</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ANSON</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">EXIDA SP</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">BON ACCORD</span>
+          </div>
+          <div class="flex items-center gap-20 px-10">
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ADNOC</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">CNPC</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">POWERCHINA</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ARGAS</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">BGP</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">SUNMAX SOLAR</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ALEC</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">ANSON</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">EXIDA SP</span>
+            <span class="text-3xl font-extrabold text-gray-300 hover:text-[#0A192F] transition-colors duration-500 whitespace-nowrap tracking-tight">BON ACCORD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-24 bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#1E3A8A] rounded-[2.5rem] p-12 md:p-16 relative overflow-hidden reveal-scale">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#C9A961]/5 rounded-full -mr-32 -mt-32"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#3B82F6]/10 rounded-full -ml-32 -mb-32"></div>
+        <div class="relative grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="text-[10px] font-bold text-[#C9A961] tracking-[0.3em] uppercase mb-4" data-en="Featured Projects" data-ar="مشاريع مميزة">Featured Projects</div>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-white font-display leading-tight">
+              <span data-en="Building Trust." data-ar="بناء الثقة.">Building Trust.</span><br>
+              <span data-en="Delivering Excellence." data-ar="تقديم التميز.">Delivering Excellence.</span>
+            </h3>
+            <p class="mt-6 text-gray-300 font-light leading-relaxed" data-en="At Salbro General Contracting LLC, we are committed to providing high-quality seismic services and manpower solutions that drive success for our clients. Safety, reliability and efficiency are the foundation of everything we do." data-ar="في سالبرو للمقاولات العامة، نحن ملتزمون بتقديم خدمات زلزالية عالية الجودة وحلول قوى عاملة تدفع نجاح عملائنا. السلامة والموثوقية والكفاءة هي أساس كل ما نقوم به.">At Salbro General Contracting LLC, we are committed to providing high-quality seismic services and manpower solutions that drive success for our clients. Safety, reliability and efficiency are the foundation of everything we do.</p>
+          </div>
+          <div class="space-y-5">
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex items-start gap-5 hover:bg-white/10 transition-all duration-500 group">
+              <div class="w-12 h-12 bg-[#C9A961]/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#C9A961]/25 transition">
+                <i class="fas fa-solar-panel text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white" data-en="Al Dhafra Solar Plant Abu Dhabi" data-ar="محطة الظفرة للطاقة الشمسية أبوظبي">Al Dhafra Solar Plant Abu Dhabi</div>
+                <div class="text-xs text-gray-400 mt-1" data-en="Proudly contributing to sustainable energy and a cleaner future." data-ar="نساهم بفخر في الطاقة المستدامة ومستقبل أنظف.">Proudly contributing to sustainable energy and a cleaner future.</div>
+              </div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex items-start gap-5 hover:bg-white/10 transition-all duration-500 group">
+              <div class="w-12 h-12 bg-[#C9A961]/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#C9A961]/25 transition">
+                <i class="fas fa-tower-broadcast text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white" data-en="ALEC AS UAE 1 Switches 33" data-ar="أليك إيه إس الإمارات 1 مفاتيح 33">ALEC AS UAE 1 Switches 33</div>
+                <div class="text-xs text-gray-400 mt-1" data-en="Supporting critical infrastructure projects with skilled manpower." data-ar="دعم مشاريع البنية التحتية الحيوية بقوى عاملة ماهرة.">Supporting critical infrastructure projects with skilled manpower.</div>
+              </div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex items-start gap-5 hover:bg-white/10 transition-all duration-500 group">
+              <div class="w-12 h-12 bg-[#C9A961]/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#C9A961]/25 transition">
+                <i class="fas fa-city text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white" data-en="Industrial & Infrastructure Projects" data-ar="المشاريع الصناعية والبنية التحتية">Industrial & Infrastructure Projects</div>
+                <div class="text-xs text-gray-400 mt-1" data-en="Delivering dependable manpower solutions across sectors." data-ar="تقديم حلول قوى عاملة موثوقة عبر القطاعات.">Delivering dependable manpower solutions across sectors.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications" class="relative py-32 bg-gray-50 overflow-hidden">
+    <div class="section-num">04</div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <div class="flex items-center justify-center gap-4 mb-6">
+          <div class="w-12 h-px bg-[#C9A961]"></div>
+          <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Compliance" data-ar="الامتثال">Compliance</span>
+          <div class="w-12 h-px bg-[#C9A961]"></div>
+        </div>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A192F] font-display" data-en="Certification & Compliance" data-ar="الشهادات والامتثال">Certification & Compliance</h2>
+        <p class="mt-6 text-gray-500 text-lg font-light" data-en="Committed to quality, safety, and international standards." data-ar="ملتزمون بالجودة والسلامة والمعايير الدولية.">Committed to quality, safety, and international standards.</p>
+      </div>
+
+      <div class="stagger grid md:grid-cols-3 gap-8 mt-20">
+        <div class="iso-badge bg-white p-10 rounded-3xl border border-gray-100 text-center relative">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-br from-[#0A192F] to-[#1E3A8A] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#0A192F]/20">
+            <i class="fas fa-certificate text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] font-display">ISO 9001:2015</h3>
+          <div class="w-10 h-0.5 bg-[#C9A961] mx-auto my-4"></div>
+          <p class="text-sm text-gray-500 leading-relaxed font-light" data-en="Quality Management System ensuring consistent quality and continuous improvement." data-ar="نظام إدارة الجودة يضمن جودة متسقة وتحسينًا مستمرًا.">Quality Management System ensuring consistent quality and continuous improvement.</p>
+        </div>
+        <div class="iso-badge bg-white p-10 rounded-3xl border border-gray-100 text-center relative">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-br from-[#0A192F] to-[#1E3A8A] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#0A192F]/20">
+            <i class="fas fa-leaf text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] font-display">ISO 14001:2015</h3>
+          <div class="w-10 h-0.5 bg-[#C9A961] mx-auto my-4"></div>
+          <p class="text-sm text-gray-500 leading-relaxed font-light" data-en="Environmental Management System for sustainable and responsible operations." data-ar="نظام الإدارة البيئية للعمليات المستدامة والمسؤولة.">Environmental Management System for sustainable and responsible operations.</p>
+        </div>
+        <div class="iso-badge bg-white p-10 rounded-3xl border border-gray-100 text-center relative">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-br from-[#0A192F] to-[#1E3A8A] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#0A192F]/20">
+            <i class="fas fa-shield-alt text-2xl text-[#D4AF37]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0A192F] font-display">ISO 45001:2018</h3>
+          <div class="w-10 h-0.5 bg-[#C9A961] mx-auto my-4"></div>
+          <p class="text-sm text-gray-500 leading-relaxed font-light" data-en="Occupational Health and Safety Management System with Zero LTI commitment." data-ar="نظام إدارة الصحة والسلامة المهنية مع التزام صفر LTI.">Occupational Health and Safety Management System with Zero LTI commitment.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <div class="reveal-left bg-gradient-to-br from-[#0A192F] to-[#112240] p-10 rounded-3xl flex items-start gap-6 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-[#C9A961]/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+          <div class="w-14 h-14 bg-[#C9A961]/15 rounded-2xl flex items-center justify-center flex-shrink-0 relative">
+            <i class="fas fa-check-circle text-[#D4AF37] text-2xl"></i>
+          </div>
+          <div class="relative">
+            <h4 class="font-bold text-white text-lg font-display" data-en="ICV Certified" data-ar="معتمد ICV">ICV Certified</h4>
+            <p class="text-sm text-gray-300 mt-2 leading-relaxed font-light" data-en="Certificate No: 152625 | Score: 37.01% — Delivering value and building a sustainable tomorrow in line with ADNOC requirements." data-ar="رقم الشهادة: 152625 | النتيجة: 37.01% — تقديم القيمة وبناء غد مستدام تماشياً مع متطلبات أدنوك.">Certificate No: 152625 | Score: 37.01% — Delivering value and building a sustainable tomorrow in line with ADNOC requirements.</p>
+          </div>
+        </div>
+        <div class="reveal-right bg-gradient-to-br from-[#0A192F] to-[#112240] p-10 rounded-3xl flex items-start gap-6 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-[#C9A961]/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+          <div class="w-14 h-14 bg-[#C9A961]/15 rounded-2xl flex items-center justify-center flex-shrink-0 relative">
+            <i class="fas fa-check-circle text-[#D4AF37] text-2xl"></i>
+          </div>
+          <div class="relative">
+            <h4 class="font-bold text-white text-lg font-display" data-en="CICPA Pass" data-ar="اجتياز CICPA">CICPA Pass</h4>
+            <p class="text-sm text-gray-300 mt-2 leading-relaxed font-light" data-en="Successfully compliant with CICPA standards for transparency and trust in all our operations." data-ar="متوافق بنجاح مع معايير CICPA للشفافية والثقة في جميع عملياتنا.">Successfully compliant with CICPA standards for transparency and trust in all our operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CEO SECTION ========== -->
+  <section class="relative py-32 bg-[#0A192F] overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px); background-size: 50px 50px;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1E3A8A]/20 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal-left relative">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="CEO Sajid Mehmood" class="rounded-3xl shadow-2xl w-full object-cover h-[600px] relative z-10">
+            <div class="absolute -bottom-8 -right-8 w-64 h-64 border-2 border-[#C9A961]/20 rounded-3xl z-0"></div>
+            <div class="absolute -top-6 -left-6 w-32 h-32 bg-[#C9A961]/10 rounded-full blur-2xl"></div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-px bg-[#C9A961]"></div>
+            <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Leadership" data-ar="القيادة">Leadership</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight font-display">
+            <span data-en="Founder & Chief" data-ar="المؤسس والرئيس">Founder & Chief</span><br>
+            <span class="shimmer-gold" data-en="Executive Officer" data-ar="التنفيذي">Executive Officer</span>
+          </h2>
+          <h3 class="text-2xl font-bold text-white mt-6 font-display">Sajid Mehmood</h3>
+          <p class="text-xs font-bold text-[#C9A961] tracking-[0.2em] uppercase mt-2" data-en="Sole Owner & Managing Director" data-ar="المالك الوحيد والمدير العام">Sole Owner & Managing Director</p>
+
+          <p class="mt-8 text-gray-300 leading-relaxed font-light" data-en="Sajid Mehmood is the Founder, Sole Owner, and Chief Executive Officer of Salbro General Contracting L.L.C., established on February 8, 2022, in Abu Dhabi, United Arab Emirates. Under his dynamic leadership and strategic vision, SALBRO has emerged as a premier multidisciplinary contracting firm and workforce technical partner serving major energy, construction, and power mega-projects across the UAE." data-ar="ساجد محمود هو المؤسس والمالك الوحيد والرئيس التنفيذي لشركة سالبرو للمقاولات العامة ذ.م.م، التي تأسست في 8 فبراير 2022 في أبوظبي، الإمارات العربية المتحدة. تحت قيادته الديناميكية ورؤيته الاستراتيجية، برزت سالبرو كشركة مقاولات رائدة متعددة التخصصات وشريك تقني للقوى العاملة تخدم مشاريع الطاقة والبناء والطاقة الكبرى في جميع أنحاء الإمارات.">
+            Sajid Mehmood is the Founder, Sole Owner, and Chief Executive Officer of Salbro General Contracting L.L.C., established on February 8, 2022, in Abu Dhabi, United Arab Emirates. Under his dynamic leadership and strategic vision, SALBRO has emerged as a premier multidisciplinary contracting firm and workforce technical partner serving major energy, construction, and power mega-projects across the UAE.
+          </p>
+
+          <blockquote class="mt-8 border-l-2 border-[#C9A961] pl-8 italic text-gray-300 font-light text-lg leading-relaxed" data-en="&quot;Since establishing SALBRO in 2022, my single-minded vision has been to build an agile, uncompromising engineering and contracting power, delivering world-class workforce solutions, absolute transparency, and safety across every sector we touch.&quot;" data-ar="&quot;منذ تأسيس سالبرو في 2022، كانت رؤيتي الوحيدة هي بناء قوة هندسية ومقاولات مرنة لا هوادة فيها، وتقديم حلول قوى عاملة عالمية المستوى وشفافية مطلقة وسلامة في كل قطاع نلمسه.&quot;">
+            "Since establishing SALBRO in 2022, my single-minded vision has been to build an agile, uncompromising engineering and contracting power, delivering world-class workforce solutions, absolute transparency, and safety across every sector we touch."
+          </blockquote>
+
+          <div class="mt-12 grid grid-cols-3 gap-4">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10 hover:border-[#C9A961]/40 transition-all duration-500 group">
+              <div class="text-2xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition" data-en="Zero LTI" data-ar="صفر LTI">Zero LTI</div>
+              <div class="text-[10px] text-gray-400 mt-2 tracking-widest uppercase font-semibold" data-en="Safety Compliance" data-ar="الامتثال للسلامة">Safety Compliance</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10 hover:border-[#C9A961]/40 transition-all duration-500 group">
+              <div class="text-2xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition">35.17%</div>
+              <div class="text-[10px] text-gray-400 mt-2 tracking-widest uppercase font-semibold" data-en="ICV Growth" data-ar="نمو ICV">ICV Growth</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 text-center border border-white/10 hover:border-[#C9A961]/40 transition-all duration-500 group">
+              <div class="text-2xl font-extrabold text-white font-display group-hover:text-[#D4AF37] transition" data-en="Rapid" data-ar="سريع">Rapid</div>
+              <div class="text-[10px] text-gray-400 mt-2 tracking-widest uppercase font-semibold" data-en="Mobilization" data-ar="التعبئة">Mobilization</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT / FORM ========== -->
+  <section id="contact" class="relative py-32 bg-white overflow-hidden">
+    <div class="section-num">05</div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="grid lg:grid-cols-2 gap-20">
+        <!-- Contact Info -->
+        <div class="reveal-left">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-px bg-[#C9A961]"></div>
+            <span class="text-xs font-bold text-[#C9A961] tracking-[0.3em] uppercase" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A192F] font-display leading-tight">
+            <span data-en="Let's Build" data-ar="لنبنِ">Let's Build</span><br>
+            <span class="text-gradient" data-en="Together" data-ar="معاً">Together</span>
+          </h2>
+          <p class="mt-6 text-gray-500 text-lg font-light leading-relaxed" data-en="Ready to discuss your project requirements? Our team is here to provide reliable and customized manpower solutions." data-ar="هل أنت مستعد لمناقشة متطلبات مشروعك؟ فريقنا هنا لتقديم حلول قوى عاملة موثوقة ومخصصة.">Ready to discuss your project requirements? Our team is here to provide reliable and customized manpower solutions.</p>
+
+          <div class="mt-12 space-y-8">
+            <div class="flex items-start gap-5 group">
+              <div class="w-14 h-14 bg-[#0A192F] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A] transition-all duration-500 group-hover:scale-110">
+                <i class="fas fa-envelope text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold text-gray-400 tracking-widest uppercase" data-en="Email" data-ar="البريد الإلكتروني">Email</div>
+                <a href="mailto:salbrocontracting@gmail.com" class="text-lg font-semibold text-[#0A192F] hover:text-[#1E3A8A] transition mt-1 block">salbrocontracting@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-5 group">
+              <div class="w-14 h-14 bg-[#0A192F] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A] transition-all duration-500 group-hover:scale-110">
+                <i class="fas fa-phone-alt text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold text-gray-400 tracking-widest uppercase" data-en="Phone" data-ar="الهاتف">Phone</div>
+                <a href="tel:+971543198484" class="text-lg font-semibold text-[#0A192F] hover:text-[#1E3A8A] transition mt-1 block">+971 543198484</a>
+                <a href="tel:+971544894173" class="text-lg font-semibold text-[#0A192F] hover:text-[#1E3A8A] transition block">+971 544894173</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-5 group">
+              <div class="w-14 h-14 bg-[#0A192F] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A] transition-all duration-500 group-hover:scale-110">
+                <i class="fas fa-globe text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold text-gray-400 tracking-widest uppercase" data-en="Website" data-ar="الموقع الإلكتروني">Website</div>
+                <a href="http://www.slbgcc.com" target="_blank" class="text-lg font-semibold text-[#0A192F] hover:text-[#1E3A8A] transition mt-1 block">www.slbgcc.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-5 group">
+              <div class="w-14 h-14 bg-[#0A192F] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A] transition-all duration-500 group-hover:scale-110">
+                <i class="fas fa-map-marker-alt text-[#D4AF37]"></i>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold text-gray-400 tracking-widest uppercase" data-en="Address" data-ar="العنوان">Address</div>
+                <div class="text-lg font-semibold text-[#0A192F] mt-1" data-en="Near Wafi Mall, Mussafah 40, Abu Dhabi, UAE" data-ar="بالقرب من مول وافي، مصفح 40، أبوظبي، الإمارات">Near Wafi Mall, Mussafah 40, Abu Dhabi, UAE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal-right">
+          <div class="bg-gradient-to-br from-[#0A192F] to-[#112240] rounded-[2rem] p-10 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#C9A961]/5 rounded-full -mr-24 -mt-24"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-[#3B82F6]/10 rounded-full -ml-24 -mb-24"></div>
+            <div class="relative">
+              <h3 class="text-2xl font-bold text-white font-display mb-8" data-en="Send Us a Message" data-ar="أرسل لنا رسالة">Send Us a Message</h3>
+              <form id="contact-form" class="space-y-5">
+                <div>
+                  <input type="text" placeholder="Full Name" required class="form-input" data-en="Full Name" data-ar="الاسم الكامل">
+                </div>
+                <div>
+                  <input type="email" placeholder="Email Address" required class="form-input" data-en="Email Address" data-ar="البريد الإلكتروني">
+                </div>
+                <div>
+                  <input type="tel" placeholder="Phone Number" class="form-input" data-en="Phone Number" data-ar="رقم الهاتف">
+                </div>
+                <div>
+                  <textarea rows="4" placeholder="Your Message" required class="form-input" data-en="Your Message" data-ar="رسالتك"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#C9A961] text-[#0A192F] py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#E5C76B] transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-0.5" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+                <div id="form-status" class="text-center text-sm font-semibold hidden"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-[#0A192F] pt-20 pb-10 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+      <div class="grid md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10">
+              <i class="fas fa-hard-hat text-[#D4AF37] text-2xl"></i>
+            </div>
+            <div>
+              <span class="text-3xl font-extrabold tracking-tight text-white font-display" data-en="SALBRO" data-ar="سالبرو">SALBRO</span>
+              <span class="block text-[9px] font-bold text-[#C9A961] tracking-[0.25em] mt-1" data-en="GENERAL CONTRACTING L.L.C" data-ar="المقاولات العامة ذ.م.م">GENERAL CONTRACTING L.L.C</span>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-md font-light" data-en="Premier Engineering, Contracting & Oilfield Technical Solutions. Empowering your enterprise for success across the UAE." data-ar="حلول هندسية ومقاولات وتقنية لحقول النفط الرائدة. تمكين مؤسستك للنجاح في جميع أنحاء الإمارات.">Premier Engineering, Contracting & Oilfield Technical Solutions. Empowering your enterprise for success across the UAE.</p>
+          <div class="flex gap-3 mt-8">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#C9A961] hover:text-[#0A192F] hover:border-[#C9A961] transition-all duration-500">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#C9A961] hover:text-[#0A192F] hover:border-[#C9A961] transition-all duration-500">
+              <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#C9A961] hover:text-[#0A192F] hover:border-[#C9A961] transition-all duration-500">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="https://wa.me/971543198484" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#C9A961] hover:text-[#0A192F] hover:border-[#C9A961] transition-all duration-500">
+              <i class="fab fa-whatsapp text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-widest uppercase mb-6 font-display" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#home" class="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"><span class="w-0 h-px bg-[#C9A961] transition-all duration-300 group-hover:w-4"></span><span data-en="Home" data-ar="الرئيسية">Home</span></a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"><span class="w-0 h-px bg-[#C9A961] transition-all duration-300 group-hover:w-4"></span><span data-en="About Us" data-ar="من نحن">About Us</span></a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"><span class="w-0 h-px bg-[#C9A961] transition-all duration-300 group-hover:w-4"></span><span data-en="Services" data-ar="خدماتنا">Services</span></a></li>
+            <li><a href="#projects" class="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"><span class="w-0 h-px bg-[#C9A961] transition-all duration-300 group-hover:w-4"></span><span data-en="Projects" data-ar="مشاريعنا">Projects</span></a></li>
+            <li><a href="#certifications" class="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"><span class="w-0 h-px bg-[#C9A961] transition-all duration-300 group-hover:w-4"></span><span data-en="Certifications" data-ar="الشهادات">Certifications</span></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-widest uppercase mb-6 font-display" data-en="Contact" data-ar="اتصل بنا">Contact</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-envelope text-[#C9A961] mt-1"></i>
+              <a href="mailto:salbrocontracting@gmail.com" class="hover:text-[#D4AF37] transition">salbrocontracting@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-phone text-[#C9A961] mt-1"></i>
+              <span>+971 543198484<br>+971 544894173</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-[#C9A961] mt-1"></i>
+              <span data-en="Near Wafi Mall, Mussafah 40, Abu Dhabi, UAE" data-ar="بالقرب من مول وافي، مصفح 40، أبوظبي، الإمارات">Near Wafi Mall, Mussafah 40,<br>Abu Dhabi, UAE</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div data-en="© 2026 Salbro General Contracting L.L.C. All rights reserved." data-ar="© 2026 سالبرو للمقاولات العامة ذ.م.م. جميع الحقوق محفوظة.">© 2026 Salbro General Contracting L.L.C. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#D4AF37] transition" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+          <a href="#" class="hover:text-[#D4AF37] transition" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
+  <a href="https://wa.me/971543198484?text=Hello%20Salbro%20General%20Contracting%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+     target="_blank" 
+     class="whatsapp-float" 
+     aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip" data-en="Chat with us" data-ar="تحدث معنا">Chat with us</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
