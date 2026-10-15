@@ -201,3 +201,111 @@ window.addEventListener('scroll', () => {
     heroImg.style.transform = `scale(1.12) translateY(${scrolled * 0.08}px)`;
   }
 });
+
+// ========== CERTIFICATE LIGHTBOX ==========
+(function initCertLightbox() {
+  const lightbox = document.getElementById('cert-lightbox');
+  if (!lightbox) return;
+
+  const certCards = Array.from(document.querySelectorAll('.cert-card'));
+  if (!certCards.length) return;
+
+  const imgEl = document.getElementById('cert-lightbox-img');
+  const captionEl = document.getElementById('cert-lightbox-caption');
+  const counterEl = document.getElementById('cert-lightbox-counter');
+  const closeBtn = lightbox.querySelector('.cert-lightbox-close');
+  const prevBtn = lightbox.querySelector('.cert-lightbox-prev');
+  const nextBtn = lightbox.querySelector('.cert-lightbox-next');
+  const backdrop = lightbox.querySelector('.cert-lightbox-backdrop');
+
+  let currentIndex = 0;
+
+  function getCaption(card, lang) {
+    return card.getAttribute(`data-cert-${lang}`) || card.getAttribute('data-cert-en') || '';
+  }
+
+  function updateContent() {
+    const card = certCards[currentIndex];
+    const src = card.getAttribute('data-cert-src');
+    if (!src) return;
+    imgEl.src = src;
+    captionEl.textContent = getCaption(card, currentLang);
+    counterEl.textContent = `${currentIndex + 1} / ${certCards.length}`;
+
+    // Hide nav if only one certificate
+    lightbox.classList.toggle('single', certCards.length <= 1);
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateContent();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    // Small delay before clearing img to avoid flicker
+    setTimeout(() => {
+      if (!lightbox.classList.contains('open')) {
+        imgEl.src = '';
+      }
+    }, 400);
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + certCards.length) % certCards.length;
+    updateContent();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % certCards.length;
+    updateContent();
+  }
+
+  // Click handlers
+  certCards.forEach((card, i) => {
+    card.addEventListener('click', () => openLightbox(i));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  backdrop.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  // Keyboard support
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+
+  // Swipe support (mobile)
+  let touchStartX = 0;
+  let touchEndX = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) showNext();
+      else showPrev();
+    }
+  }, { passive: true });
+
+  // Re-render caption on language change
+  const langToggleBtn = document.getElementById('lang-toggle');
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      if (lightbox.classList.contains('open')) {
+        setTimeout(updateContent, 50);
+      }
+    });
+  }
+})();
