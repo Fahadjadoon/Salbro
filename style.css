@@ -662,6 +662,41 @@ body.no-scroll {
   }
 }
 
+/* ========== CLIENT LOGO TILES ========== */
+.logo-tile {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(10, 25, 47, 0.06);
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.04);
+}
+.logo-tile img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+.logo-tile:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 169, 97, 0.4);
+  box-shadow: 0 15px 40px rgba(10, 25, 47, 0.12);
+}
+.logo-tile:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .logo-tile { height: 90px; padding: 14px; }
+}
+
 /* ========== SCROLLBAR ========== */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
